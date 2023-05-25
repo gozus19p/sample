@@ -1,9 +1,8 @@
 pipeline {
-    agent { dockerfile true }
     stages {
-        stage('Test') {
+        stage('build') {
             steps {
-                sh 'poetry --version'
+                sh 'docker build -t sample:1.0.0 .'
             }
         }
     }
